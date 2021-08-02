@@ -28,14 +28,8 @@ resource "aws_cloudfront_distribution" "plausible_distribution" {
     target_origin_id = local.origin_id
     viewer_protocol_policy = "https-only"
     compress = true
-
-    forwarded_values {
-      query_string = false
-
-      cookies {
-        forward = "none"
-      }
-    }
+    cache_policy_id = var.caching_disabled_policy_id
+    origin_request_policy_id = var.user_agent_referer_headers_policy_id
   }
 
   ordered_cache_behavior {

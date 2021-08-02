@@ -1,0 +1,8 @@
+region = "us-east-2"
+profile = "default"
+aliases = [
+  "plausible-test.example.com"
+]
+acm_certificate_arn = "arn:aws:acm:us-east-1:STUFF"
+caching_disabled_policy_id = "CachingDisabled ID"
+user_agent_referer_headers_policy_id = "UserAgentRefererHeaders ID"
